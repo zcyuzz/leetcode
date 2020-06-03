@@ -1,4 +1,7 @@
 package Q1394;
+
+import java.util.Arrays;
+
 /*
 Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
 
@@ -38,6 +41,23 @@ Constraints:
  */
 public class Q1394 {
     public static void main(String[] args) {
+        int input [] = {7,7,7,7,7,7};
+        System.out.println(findLucky(input));
+    }
+    public static int findLucky(int[] arr) {
+        int[] count = new int[501];
+        int lucky=-1;
+        for(int i =0;i<arr.length;i++){
+            count[arr[i]]++;
+        }
+        System.out.println(Arrays.toString(count));
+        for(int i =1;i<count.length;i++){
+            if(count[i]==i){
+                lucky=i;
+            }
+        }
+        return lucky;
 
     }
+
 }
