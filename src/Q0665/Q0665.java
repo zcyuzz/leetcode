@@ -1,4 +1,5 @@
 package Q0665;
+
 /*
 Given an array nums with n integers, your task is to check if it could become non-decreasing by modifying at most 1 element.
 
@@ -25,27 +26,28 @@ Constraints:
  */
 public class Q0665 {
     public static void main(String[] args) {
-        int [] input = {1,3,2};
+        int[] input = {1, 3, 2};
         System.out.println(checkPossibility(input));
     }
+
     public static boolean checkPossibility(int[] nums) {
-        if(nums.length<=1){
+        if (nums.length <= 1) {
             return true;
         }
         int temp = -1;
-        int count=0;
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]<nums[i-1]){
+        int count = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
                 count++;
-                temp =i;
+                temp = i;
             }
-            if(count==2){
+            if (count == 2) {
                 return false;
             }
         }
         System.out.println(temp);
-        if(temp>1&&temp!=nums.length-1){
-            if(nums[temp-1]>nums[temp+1]&&nums[temp]<nums[temp-2]) return false;
+        if (temp > 1 && temp != nums.length - 1) {
+            if (nums[temp - 1] > nums[temp + 1] && nums[temp] < nums[temp - 2]) return false;
         }
         return true;
     }
