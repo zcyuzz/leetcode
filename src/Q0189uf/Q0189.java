@@ -1,7 +1,4 @@
-package Q0189;
-
-import java.awt.*;
-import java.util.Arrays;
+package Q0189uf;
 
 /*
 Given an array, rotate the array to the right by k steps, where k is non-negative.
@@ -40,15 +37,18 @@ public class Q0189 {
         int [] input = {-1};
         rotate(input,2);
     }
-    public static void rotate(int[] nums, int k) {
-        if(nums.length==1) return;
-        int n = nums.length;
-        int [] answer = new int[n];
-        for(int i=0;i<n;i++){
-            answer[(i+k)%n]=nums[i];
-        }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = answer[i];
-        }
+    public static void  rotate(int [] nums, int k){
+        
     }
+//    public static void rotate(int[] nums, int k) {
+//        if(nums.length==1) return;
+//        int n = nums.length;
+//        int [] answer = new int[n];
+//        for(int i=0;i<n;i++){
+//            answer[(i+k)%n]=nums[i];
+//        }
+//        for (int i = 0; i < nums.length; i++) {
+//            nums[i] = answer[i];
+//        }
+//    }
 }
