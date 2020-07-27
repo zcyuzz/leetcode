@@ -3,9 +3,9 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        String s="s";
+        String s="abcedfg";
         String ss ="s";
-        System.out.println(s==ss);
+        System.out.println(s.substring(0,s.length()));
     }
 //    private static final int BASE_ARRAY_SIZE = 10000;
 //
