@@ -53,6 +53,7 @@ public class Q0010 {
     }
     public static boolean isMatch(String s, String p) {
         boolean flag = false;
+        if(s.equals(p)) return true;
 
         return flag;
     }
