@@ -1,4 +1,4 @@
-package Q0010;
+package Q0010uf;
 /*
 Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*'.
 
@@ -49,37 +49,22 @@ public class Q0010 {
     public static void main(String[] args) {
         String input = "aa";
         String pattern = "a.";
-        System.out.println(isMatch(input,pattern));
+        System.out.println(isMatch(input, pattern));
     }
+
     public static boolean isMatch(String s, String p) {
-        boolean flag = false;
-        char preceding = ' ';
-        int repeatCount = 0;
-        if(s.equals(p)) return true;
-        while(flag == false){
-            for(int i=0;i<s.length();i++){
-                if(s.charAt(i)!=p.charAt(i)){
-                   if(p.charAt(i)=='.'&&s.length()>i+1){
-                       if(p.charAt(i+1)=='*') return true;
-                       preceding=p.charAt(i-1);
-                       s=s.substring(i+1,s.length());
-                       p=p.substring(i+1,p.length());
-                       break;
-                   }
-                   if(p.charAt(i)=='*'){
-                        if(i==0) continue;
-                        preceding = p.charAt(i-1);
-                        for(int j=i;j<s.length();j++){
-                            if(s.charAt(j)==preceding) repeatCount++;
-                            s=s.substring(repeatCount,s.length());
-                            p=p.substring(i+1,p.length());
-                            break;
-                        }
-                   }
-                }
+        int indexOfs = 0;
+        int sLength = s.length();
+        for (int i = 0; i < p.length(); i++) {
+            if (i == s.length() && p.charAt(i) != '*') return false;
+            if (p.charAt(i) == s.charAt(indexOfs)) {
+                indexOfs++;
+                continue;
+            }
+            if (p.charAt(i) == '.') {
+
             }
         }
-
-        return flag;
+        return true;
     }
 }
